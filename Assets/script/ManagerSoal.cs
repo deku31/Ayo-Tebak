@@ -25,9 +25,12 @@ public class ManagerSoal : MonoBehaviour
     public int AcakSoal;
 
     [SerializeField] private List<Image> Btn;
+    [SerializeField] private List<Text> textcolor;
 
     [SerializeField] private Color colordefault;
     [SerializeField] private Color colorcorrect;
+    [SerializeField] private Color TextColorCorrect;
+    [SerializeField] private Color TextColordefault;
 
     bool starttime;
 
@@ -106,6 +109,10 @@ public class ManagerSoal : MonoBehaviour
             {
                 item.color = colordefault;
             }
+            foreach (var item in textcolor)
+            {
+                item.color = TextColordefault;
+            }
 
             soalTxt.text = DaftarSoal[AcakSoal].textsoal;
             Petunjuk.text = "Petunjuk : " + _Petunjuk;
@@ -135,17 +142,21 @@ public class ManagerSoal : MonoBehaviour
         if (DaftarSoal[AcakSoal].A == true)
         {
             Btn[0].color = colorcorrect;
+            textcolor[0].color = TextColorCorrect;
         }
         else if (DaftarSoal[AcakSoal].B == true)
         {
+            textcolor[1].color = TextColorCorrect;
             Btn[1].color = colorcorrect;
         }
         else if (DaftarSoal[AcakSoal].C == true)
         {
+            textcolor[2].color = TextColorCorrect;
             Btn[2].color = colorcorrect;
         }
         else if (DaftarSoal[AcakSoal].D == true)
         {
+            textcolor[3].color = TextColorCorrect;
             Btn[3].color = colorcorrect;
         }
         else
@@ -153,6 +164,10 @@ public class ManagerSoal : MonoBehaviour
             foreach (var item in Btn)
             {
                 item.color = colordefault;
+            }
+            foreach (var item in textcolor)
+            {
+                item.color = TextColordefault;
             }
         }
     }
