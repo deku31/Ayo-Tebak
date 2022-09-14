@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ManagerSoal : MonoBehaviour
 {
+    bool wait=false;
+
     [SerializeField] private Text soalTxt;
     [SerializeField] private Text Score;
     public int jawabanBenar;
